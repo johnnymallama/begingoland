@@ -8,6 +8,9 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
+/*
+ChequeoYaExisteUsuario validar si existe un usuario por email
+*/
 func ChequeoYaExisteUsuario(email string) (models.Usuario, bool, string) {
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
