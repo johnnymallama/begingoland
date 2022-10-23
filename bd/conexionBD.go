@@ -10,7 +10,7 @@ import (
 
 const (
 	DATABASE_NAME       string = "GOLANDZERO"
-	COLLECTION_USUARIOS string = "users"
+	COLLECTION_USUARIOS string = "user"
 )
 
 var MongoCN = ConectarBD()
