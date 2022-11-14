@@ -12,6 +12,7 @@ const (
 	DATABASE_NAME       string = "GOLANDZERO"
 	COLLECTION_USUARIOS string = "user"
 	COLLECTION_TWEET    string = "tweet"
+	COLLECTION_RELACION string = "relation"
 )
 
 var MongoCN = ConectarBD()
