@@ -11,6 +11,7 @@ import (
 const (
 	DATABASE_NAME       string = "GOLANDZERO"
 	COLLECTION_USUARIOS string = "user"
+	COLLECTION_TWEET    string = "tweet"
 )
 
 var MongoCN = ConectarBD()

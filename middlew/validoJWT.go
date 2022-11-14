@@ -1,6 +1,10 @@
 package middlew
 
-import "net/http"
+import (
+	"net/http"
+
+	"github.com/johnnymallama/begingoland/routers"
+)
 
 func ValidoJWT(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
@@ -9,5 +13,6 @@ func ValidoJWT(next http.HandlerFunc) http.HandlerFunc {
 			http.Error(w, "Error en el Token !"+err.Error(), http.StatusBadRequest)
 			return
 		}
+		next.ServeHTTP(w, r)
 	}
 }
