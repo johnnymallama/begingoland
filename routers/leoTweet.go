@@ -9,11 +9,6 @@ import (
 )
 
 func LeoTweet(w http.ResponseWriter, r *http.Request) {
-	ID := r.URL.Query().Get("id")
-	if len(ID) < 1 {
-		http.Error(w, "Debe enviar el parametro id", http.StatusBadRequest)
-		return
-	}
 	pagina := r.URL.Query().Get("pagina")
 	if len(pagina) < 1 {
 		http.Error(w, "Debe enviar el parametro pagina", http.StatusBadRequest)
@@ -26,7 +21,7 @@ func LeoTweet(w http.ResponseWriter, r *http.Request) {
 	}
 
 	pag := int64(paginaInt)
-	data, status, err := bd.LeoTweet(ID, pag)
+	data, status, err := bd.LeoTweet(IDUsuario, pag)
 	if err != nil {
 		http.Error(w, "Error consultando tweets "+err.Error(), http.StatusBadRequest)
 		return
